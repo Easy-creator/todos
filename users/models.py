@@ -89,6 +89,8 @@ class User(AbstractBaseUser, PermissionsMixin, TrackingModels):
     email_verified = models.BooleanField(
         _("email_verified"),
         default=False,)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
     
     EMAIL_FIELD = "email"
     USERNAME_FIELD = "email"
@@ -97,6 +99,7 @@ class User(AbstractBaseUser, PermissionsMixin, TrackingModels):
     class Meta:
         verbose_name = _("user")
         verbose_name_plural = _("users")
+        ordering = ['-created_at']
 
     @property
     def token(self):

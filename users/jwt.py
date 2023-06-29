@@ -5,9 +5,6 @@ import jwt
 from django.conf import settings
 
 class JWTAuthetication(BaseAuthentication):
-    print('auth token')
-
-
     def authenticate(self, request):
         auth_header = get_authorization_header(request)
         auth_data = auth_header.decode('utf-8')
