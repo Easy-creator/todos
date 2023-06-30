@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'users',
     'tools',
     'django_filters',
+    'drf_yasg',
+    'coreapi',
 ]
 
 MIDDLEWARE = [
