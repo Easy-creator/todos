@@ -17,6 +17,7 @@ class AuthUserApiView(GenericAPIView):
         return response.Response({'user': serializer.data})
 
 class RegisterApiView(GenericAPIView):
+    authentication_classes = []
     serializers_class = RegisterationPoint
 
     def post(self, request):
